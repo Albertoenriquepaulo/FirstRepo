@@ -128,3 +128,4 @@ function cl(variable) {
 let math=$("#chatbox");
         //math.text(math.text() + " woow...")
         console.log(math);
+
