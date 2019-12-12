@@ -16,6 +16,7 @@ document.getElementById('buscarBtn').addEventListener('click', (e) => {
     if (textoBuscador !== '') {
         console.log('buscando');
     }else{
-        console.log('Debe colocar algo en el buscador');
+        // Mostrar error alerta de que el campo evento está vacio
+        ui.mostrarMensaje('Escribe algo en el busacdor', 'alert alert-danger mt-4');
     }
 });

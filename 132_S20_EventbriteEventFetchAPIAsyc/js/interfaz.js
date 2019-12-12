@@ -30,6 +30,28 @@ class Interfaz{
                 });
             })
 
-    }      
+    } 
+
+    // Metodo para impirmir mensajes
+    mostrarMensaje(mensaje, clases){
+        const div = document.createElement('div');
+        div.classList = clases;
+        // agregar texto
+        div.appendChild(document.createTextNode(mensaje));
+        // buscar un padre
+        document.getElementById('buscador').appendChild(div);
+        // Quitar el alert después de tres segundos
+        setTimeout(() => {
+            this.limpiarMensaje();
+        }, 2000);
+    }
+
+    // Desaparece el mensaje en caso de que exista
+    limpiarMensaje(){
+        const alert = document.querySelector('.alert');
+        if (alert) {
+            alert.remove();
+        }
+    }
 
 }
