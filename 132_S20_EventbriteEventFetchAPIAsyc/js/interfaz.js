@@ -17,7 +17,7 @@ class Interfaz{
         const listaCategorias = eventbrite.obtenerCategorias()
             .then(categorias => {
                 const cats = categorias.categories;
-                console.log(cats);
+
                 // seleccionamos el select categorias del index
                 const selectCategoria = document.getElementById('listado-categorias');
 
