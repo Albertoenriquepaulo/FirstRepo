@@ -9,12 +9,27 @@ class Interfaz{
 
     //Metodo para cuando inicialize la app
     init(){
-
+        this.imprimirCategorias();
     }
 
     // Imprimir categorias
     imprimirCategorias() {
-        const listaCategorias = eventbrite.obtenerCategorias()      
+        const listaCategorias = eventbrite.obtenerCategorias()
+            .then(categorias => {
+                const cats = categorias.categories;
+                console.log(cats);
+                // seleccionamos el select categorias del index
+                const selectCategoria = document.getElementById('listado-categorias');
+
+                // recorremos el arreglo e imprimimos los options
+                cats.forEach(element => {
+                    const option = document.createElement('option');
+                    option.value = element.id;
+                    option.appendChild(document.createTextNode(element.name_localized));
+                    selectCategoria.appendChild(option);
+                });
+            })
+
     }      
 
 }
