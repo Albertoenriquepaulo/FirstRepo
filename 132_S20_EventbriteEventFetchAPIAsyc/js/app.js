@@ -17,7 +17,14 @@ document.getElementById('buscarBtn').addEventListener('click', (e) => {
         // Cuando si hay una busqueda
         eventbrite.obtenerEventos(textoBuscador, categoriaSeleccionada)
             .then( eventos => {
-                console.log(eventos);
+                if (eventos.events.lengh > 0){
+                    // Si hay eventos mostrar resultado
+                    ui.limpiarResultados();
+                    ui.mostrarEventos(eventos.eventos);
+                } else{
+                    //No hay eventos mostrar alerta
+                    ui.mostrarMensaje('No hay resultados', 'aler alert-danger mt-4')
+                }
             })
     }else{
         // Mostrar error alerta de que el campo evento está vacio

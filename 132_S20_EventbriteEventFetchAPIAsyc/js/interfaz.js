@@ -31,7 +31,38 @@ class Interfaz{
             })
 
     } 
+    // Lee la respuesta de la API e imprime los resulatdos
+    mostrarEventos(eventos){
+        // leer los ebventos y agregarlos a una variable
+        const listaEventos = eventos.events;
+        // recorrer los eventos y crear su template
+        listaEventos.forEach(element => {
+            this.listado.innerHTML += `
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="img-fluid mb-2" src="${element.logo !== null ? element.logo.url : ''}">
+                    </div>
+                        <div class="card-body">
+                            <h2 class="text-center">${element.name.text}</h2>
+                            <p class="lead texto-info">Información del evento</p>
+                            <p>${element.description.text.substring(0,280)}...</p>
 
+                            <span class="badge badge-primary">Capacidad: ${element.capacity}</span>
+                            <span class="badge badge-primary">Fecha y hora: ${element.start.local}</span>
+                            <a href="${element.url}" target="_blank" class="btn btn-primary btn-block mt-4">Comprar boletos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+        });
+
+    }
+    // Limpia los resultados previos del evento
+    limpiarResultados(){
+        this.listado.innerHTML = '';
+    }
     // Metodo para impirmir mensajes
     mostrarMensaje(mensaje, clases){
         const div = document.createElement('div');
