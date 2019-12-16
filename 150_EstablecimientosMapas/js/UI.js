@@ -84,7 +84,8 @@ class UI {
         //Aqui le decimos traeme todos en los que el resultado sea diferente a -1
         const filtro = resultado.filter(filtro => filtro.calle.indexOf(busqueda) !== -1);
         console.log(filtro);
-        //mostrar los pines
+       //mostrar los pines
+       this.mostrarPines(filtro);
     }
 
 

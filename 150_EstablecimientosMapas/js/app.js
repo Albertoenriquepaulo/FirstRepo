@@ -12,7 +12,9 @@ buscador.addEventListener('input', () => {
         console.log(buscador.value);
         ui.obtenerSugerencias(buscador.value);
     } else {
-        // No bsucar nada aún
+        // Cuando ahcemos una búsqueda y obtenemos resultado, si borramos loq ue está en el input
+        //queremos que vuelva a mostrar todo otra vez
+        ui.mostrarEstablecimientos();
     }
     
 });
