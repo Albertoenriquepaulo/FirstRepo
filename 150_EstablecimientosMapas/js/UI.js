@@ -63,24 +63,27 @@ class UI {
         this.markers.addTo(this.mapa);
     }
     //Buscador para obtener sugerencias
-    obtenerSugerencias(busqueda){
+    obtenerSugerencias (busqueda){
+        console.log('obtenerSugerencias');
         this.api.obtenerDatos()
             .then(datos => {
                 //Obtenemos los datos
-                const resultados = datos.respuestaJSON.results;
-                console.log('AQUI',resultados);
-    
+                const resultados = datos.results;
+                // console.log('AQUI',resultados);
                 // Enviar el JSON y la búsqueda para el filtrado 
                 this.filtrarSugerencias(resultados, busqueda);
 
             }).catch((err) => {
-                
+                console.error(err);
             });
     }
     //Filtrar las sugerencias en base al input
     filtrarSugerencias(resultado, busqueda){
-        //filtrar con .file-path-wrapper
-
+        //filtrar con .filter
+        //con idexOf nos retornará la posicion en la que se encuentra, sino lo encuentra retornará -1
+        //Aqui le decimos traeme todos en los que el resultado sea diferente a -1
+        const filtro = resultado.filter(filtro => filtro.calle.indexOf(busqueda) !== -1);
+        console.log(filtro);
         //mostrar los pines
     }
 

@@ -1,7 +1,7 @@
 class API{
     url = 'https://api.datos.gob.mx/v1/precio.gasolina.publico';
     async obtenerDatos(){ 
-        const total = 100;
+        const total = 1000;
         // Obtener los datos desde la API
         const datos = await fetch (`${this.url}?pageSize=${total}`);
 
