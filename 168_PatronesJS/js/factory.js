@@ -32,22 +32,18 @@ function constructorSitios(){
 
 const InputHTML = function(texto){
     this.texto = texto;
-
 }
 
 const ImagenHTML = function(texto){
     this.texto = texto;
-
 }
 
 const HeadingHTML = function(texto){
     this.texto = texto;
-
 }
 
 const ParrafoHTML = function(texto){
     this.texto = texto;
-
 }
 
 const sitioWeb = new constructorSitios();
