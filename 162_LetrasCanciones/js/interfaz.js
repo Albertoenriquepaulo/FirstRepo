@@ -10,5 +10,6 @@ export function errorMessage(errorMsg) {
     setTimeout(() => {
         divMensajes.innerHTML = '';
         divMensajes.classList.remove('error');
+        formBuscar.reset();
     }, 2000);
 }

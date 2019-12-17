@@ -25,6 +25,7 @@ UI.formBuscar.addEventListener('submit', e => {
                          console.log('No existe coincidencia con los datos de su búsqueda...');
                          UI.errorMessage('No existe coincidencia con los datos de su búsqueda...')
                     } else {
+                         // UI.divResultado.textContent = resultado.lyrics; // Mismo resultado que el de abajo
                          UI.divResultado.innerHTML = resultado.lyrics;
                     }
                });
