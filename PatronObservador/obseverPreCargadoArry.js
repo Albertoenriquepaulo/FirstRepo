@@ -12,6 +12,7 @@ class Article{
     addArticle (article){
         this.arryArticles.push(article);
         this.notifySubscriptors();
+        console.log(view.render);
     }
 
     addSubscriptor(functionToExecute){
