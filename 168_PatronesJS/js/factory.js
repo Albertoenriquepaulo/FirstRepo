@@ -1,3 +1,4 @@
+// OJO -> https://www.pensemosweb.com/patrones-de-diseno-en-javascript-singleton-factory/
 // La idea/clave del Factory es tener la capacidad de generar distintos tipos de datos en tiempo de ejecución
 
 function constructorSitios(){

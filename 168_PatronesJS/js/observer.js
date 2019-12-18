@@ -1,6 +1,8 @@
 // Observer
 // También conocido como suscriptor publicador
 
+// https://www.pensemosweb.com/implementar-patron-observador-javascript/
+
 let observer = {
     obtenerOfertas: function (callback) {
         if (typeof callback === 'function') {
@@ -41,14 +43,29 @@ const udemy = {
         this.publicarOfertas(curso);
     }
 }
+console.log(udemy);
+// const facebook = {
+//     nuevoAnuncio: function () {
+//         const oferta = 'Compra un celular';
+//         this.publicarOfertas(oferta);
+//     }
+// }
 
-const facebook = {
-    nuevoAnuncio: function () {
-        const oferta = 'Compra un celular';
-        this.publicarOfertas(oferta);
-    }
-}
+// // Crear los publicadores
+// observer.crear(udemy);
+// observer.crear(facebook);
 
-// Crear los publicadores
-observer.crear(udemy);
-observer.crear(facebook);
+// const juan = {
+//     compartir: function (oferta) {
+//         console.log('Excelente oferta! ' + oferta);
+//     }
+// }
+
+// const Karen = {
+//     interesa: function (oferta) {
+//         console.log('Me ineteresa la oferta de ' + oferta);
+//     }
+// }
+
+// udemy.obtenerOfertas( juan.compartir )
+// udemy.nuevoCurso();

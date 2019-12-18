@@ -7,6 +7,8 @@
 //
 // Este ejemplo tendrá todas las funciones en una sola instancia y será un Object 
 // Literal
+//
+// OJO -> https://www.pensemosweb.com/patrones-de-diseno-en-javascript-singleton-factory/
 
 const alumnos = {
     // Propiedad para todos los alumnos

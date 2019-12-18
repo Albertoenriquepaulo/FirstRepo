@@ -7,6 +7,8 @@
 //
 // Un buen ejemplo para esto seria un formulario
 
+// OJO -> https://www.pensemosweb.com/patrones-de-diseno-en-javascript-singleton-factory/
+
 class Formulario {
     constructor() {
         this.campos = [];
