@@ -149,25 +149,27 @@ const autos = [
 // Recomendado para extraer valores
 
 // Quiero todos los autos marca BMW
-let resultado = autos.filter(auto => {
-	return auto.marca === 'BMW';
-});
-resultado = autos.filter(auto => auto.marca === 'BMW'); //Igual que el de arriba
-console.log(resultado);
+// let resultado = autos.filter(auto => {
+// 	return auto.marca === 'BMW';
+// });
+// resultado = autos.filter(auto => auto.marca === 'BMW'); //Igual que el de arriba
+// console.log(resultado);
 
-// Quiero todos los autos diferentes a BMW
-resultado = autos.filter(auto => auto.marca !== 'BMW'); //Igual que el de arriba
-console.log(resultado);
+// // Quiero todos los autos diferentes a BMW
+// resultado = autos.filter(auto => auto.marca !== 'BMW'); //Igual que el de arriba
+// console.log(resultado);
 
-resultado = autos.filter(auto => auto.year > 2015); //Igual que el de arriba
-console.log(resultado);
+// resultado = autos.filter(auto => auto.year > 2015); //Igual que el de arriba
+// console.log(resultado);
 
-resultado = autos.filter(auto => auto.puertas === 2 && auto.year <= 2017); //Igual que el de arriba
-console.log(resultado);
+// resultado = autos.filter(auto => auto.puertas === 2 && auto.year <= 2017); //Igual que el de arriba
+// console.log(resultado);
 
 //----------------------------------------------------------------------------------------
 // find
-
+// Retorna el primer elemento que encuentre, solo UNO
+resultado = autos.find(auto => auto.marca === 'BMW'); //Igual que el de arriba
+console.log(resultado);
 //----------------------------------------------------------------------------------------
 // reduce
 
