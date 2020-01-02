@@ -62,7 +62,29 @@ document.addEventListener('DOMContentLoaded', () => {
             sintomas: sintomas.value
         }
 
-        console.log(nuevaCita);
+        //console.log(nuevaCita);
+
+        // en indexedDB se utilizan las transacciones
+        let transaction = DB.transaction(['citas'], 'readwrite');
+        let objectStore = transaction.objectStore('citas');
+        let peticion = objectStore.add(nuevaCita);
+
+        console.log(peticion);
         
+        // Si la petición fue correcta se dipara el evento onsucces
+        peticion.onsuccess = () => {
+            form.reset();
+        }
+
+        // Cuando la transacción se complete
+        transaction.oncomplete = () => {
+            console.log('Cita Agregada');
+        }
+        
+        // Si la transaccion resulta en un error
+        transaction.onerror = () => {
+            console.log('Hubo un error');
+        }
+
     }
 });
