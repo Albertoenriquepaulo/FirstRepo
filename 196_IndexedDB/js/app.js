@@ -39,5 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //Crear los indices de la DB, createIndex : 3 parametros, nombre, keyPath y opciones
         objectStore.createIndex('mascota', 'mascota', { unique: false });
+        objectStore.createIndex('cliente', 'cliente', { unique: false });
+        objectStore.createIndex('telefono', 'telefono', { unique: false });
+        objectStore.createIndex('fecha', 'fecha', { unique: false });
+        objectStore.createIndex('hora', 'hora', { unique: false });
+        objectStore.createIndex('sintomas', 'sintomas', { unique: false });
+
+        console.log('DB created and ready...!!!');
     }
 });
