@@ -162,16 +162,40 @@ const autos = [
 // resultado = autos.filter(auto => auto.year > 2015); //Igual que el de arriba
 // console.log(resultado);
 
-// resultado = autos.filter(auto => auto.puertas === 2 && auto.year <= 2017); //Igual que el de arriba
+// resultado = autos.filter(auto => auto.puertas === 2 && auto.year <= 2017); 
 // console.log(resultado);
 
 //----------------------------------------------------------------------------------------
 // find
 // Retorna el primer elemento que encuentre, solo UNO
-resultado = autos.find(auto => auto.marca === 'BMW'); //Igual que el de arriba
-console.log(resultado);
+// resultado = autos.find(auto => auto.marca === 'BMW'); //Igual que el de arriba
+// console.log(resultado);
 //----------------------------------------------------------------------------------------
 // reduce
+// Caracteristica principal, es que toma todos los valores y retorna un valor único
+
+let resultado = autos.reduce((total, auto) => total + auto.precio, 0);
+console.log(resultado);
+
+const numeros = [1,2,3,4];
+let initValue = 0;
+resultado = numeros.reduce((anteriorValue, actualValue) => anteriorValue + actualValue, initValue);
+console.log(resultado);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //----------------------------------------------------------------------------------------
 // some
