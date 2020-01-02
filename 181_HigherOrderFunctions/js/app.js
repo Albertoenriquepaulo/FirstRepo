@@ -174,30 +174,18 @@ const autos = [
 // reduce
 // Caracteristica principal, es que toma todos los valores y retorna un valor único
 
-let resultado = autos.reduce((total, auto) => total + auto.precio, 0);
-console.log(resultado);
+// let resultado = autos.reduce((total, auto) => total + auto.precio, 0);
+// console.log(resultado);
 
-const numeros = [1,2,3,4];
-let initValue = 0;
-resultado = numeros.reduce((anteriorValue, actualValue) => anteriorValue + actualValue, initValue);
-console.log(resultado);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// const numeros = [1,2,3,4];
+// let initValue = 0;
+// resultado = numeros.reduce((anteriorValue, actualValue) => anteriorValue + actualValue, initValue);
+// console.log(resultado);
 
 //----------------------------------------------------------------------------------------
 // some
-
-
+// Evalua cierta condición y unicamente retorna true or false
+let resultado = autos.some(auto => auto.marca === 'BMW');
+console.log(resultado);
+resultado = autos.some(auto => auto.marca === 'Ferrari');
+console.log(resultado);
