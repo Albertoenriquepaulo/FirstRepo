@@ -177,6 +177,7 @@ listener('color');
 
 function mostrarAutos(autos) {
     const contenedor = document.querySelector('#resultado');
+    contenedor.innerHTML = '';
     autos.forEach(auto => {
         p = document.createElement('p');
         p.innerHTML = `${auto.marca} ${auto.modelo} - ${auto.year} - ${auto.puertas} Puertas - Transmisión: ${auto.transmision} - Precio: ${auto.precio} - Color: ${auto.color}` ;
@@ -184,15 +185,16 @@ function mostrarAutos(autos) {
     });
 }
 
-function filtrarAuto1() {
-    const autosCopy = obtenerAutos().filter(element => element.marca === datosBusqueda.marca)
-    .filter(element => element.year === datosBusqueda.year);
-    mostrarAutos(autosCopy)
-}
-
 function filtrarAuto() {
-    const autosCopy = obtenerAutos().filter(filtrarMarca);
-    //mostrarAutos(autosCopy)
+    const autosCopy = obtenerAutos().filter(filtrarMarca)
+                        .filter(filtrarYear)
+                        .filter(filtrarMin)
+                        .filter(filtrarMax)
+                        .filter(filtrarPuertas)
+                        .filter(filtrarTrans)
+                        .filter(filtrarColor);
+
+    mostrarAutos(autosCopy)
     console.log(autosCopy);
 }
 
@@ -200,6 +202,58 @@ function filtrarMarca(element) {
     if (datosBusqueda.marca) {
         return element.marca === datosBusqueda.marca;
     } else {
-        return;
+        return element;
+    }
+}
+
+function filtrarYear(element) {
+    console.log(element);
+    console.log(+datosBusqueda.year);
+    if (datosBusqueda.year) {
+        return element.year === +datosBusqueda.year;
+    } else {
+        return element;
+    }
+}
+
+function filtrarPuertas(element) {
+    // console.log('AQUI', element);
+    // console.log('AQUI1', +datosBusqueda.puertas);
+    if (datosBusqueda.puertas) {
+        return element.puertas === +datosBusqueda.puertas;
+    } else {
+        return element;
+    }
+}
+
+function filtrarTrans(element) {
+    if (datosBusqueda.transmision) {
+        return element.transmision === datosBusqueda.transmision;
+    } else {
+        return element;
+    }
+}
+
+function filtrarColor(element) {
+    if (datosBusqueda.color) {
+        return element.color === datosBusqueda.color;
+    } else {
+        return element;
+    }
+}
+
+function filtrarMin(element) {
+    if (datosBusqueda.minimo) {
+        return element.precio >= +datosBusqueda.minimo;
+    } else {
+        return element;
+    }
+}
+
+function filtrarMax(element) {
+    if (datosBusqueda.maximo) {
+        return element.precio <= +datosBusqueda.maximo;
+    } else {
+        return element;
     }
 }
