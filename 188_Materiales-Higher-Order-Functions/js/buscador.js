@@ -184,8 +184,22 @@ function mostrarAutos(autos) {
     });
 }
 
-function filtrarAuto() {
-    autosCopy = autos.filter(element => element.marca === datosBusqueda.marca)
-    //.filter(element => element.year === datosBusqueda.year);
+function filtrarAuto1() {
+    const autosCopy = obtenerAutos().filter(element => element.marca === datosBusqueda.marca)
+    .filter(element => element.year === datosBusqueda.year);
     mostrarAutos(autosCopy)
+}
+
+function filtrarAuto() {
+    const autosCopy = obtenerAutos().filter(filtrarMarca);
+    //mostrarAutos(autosCopy)
+    console.log(autosCopy);
+}
+
+function filtrarMarca(element) {
+    if (datosBusqueda.marca) {
+        return element.marca === datosBusqueda.marca;
+    } else {
+        return;
+    }
 }
