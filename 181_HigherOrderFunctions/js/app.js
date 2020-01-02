@@ -129,28 +129,49 @@ const autos = [
 // autos.forEach(auto => {
 // 	console.log(auto);
 // });
-
+//----------------------------------------------------------------------------------------
 // Muy similar al foreach	
 // MAP (map)
 // El map comparado con el forEach de arriba da el mismo resultado
 // la Diferencia está en que map retorna un arreglo nuevo
-let resultado = autos.forEach(auto => {
-	return auto;
-}); //Esto retornará undefined, ya que forEach no devuelve valor, solo accede
+// let resultado = autos.forEach(auto => {
+// 	return auto;
+// }); //Esto retornará undefined, ya que forEach no devuelve valor, solo accede
 
-let resultado = autos.map(auto => {
-	return auto;
-}); // Esto si es correcto ya que map si retorna valor
+// let resultado = autos.map(auto => {
+// 	return auto;
+// }); // Esto si es correcto ya que map si retorna valor
 
-let resultado = autos.map( auto => auto );  // Igual que el de arriba pero mas simple
+// let resultado = autos.map( auto => auto );  // Igual que el de arriba pero mas simple
 
-// Recomendado para extraer valores
+//----------------------------------------------------------------------------------------
 // filter
+// Recomendado para extraer valores
 
+// Quiero todos los autos marca BMW
+let resultado = autos.filter(auto => {
+	return auto.marca === 'BMW';
+});
+resultado = autos.filter(auto => auto.marca === 'BMW'); //Igual que el de arriba
+console.log(resultado);
+
+// Quiero todos los autos diferentes a BMW
+resultado = autos.filter(auto => auto.marca !== 'BMW'); //Igual que el de arriba
+console.log(resultado);
+
+resultado = autos.filter(auto => auto.year > 2015); //Igual que el de arriba
+console.log(resultado);
+
+resultado = autos.filter(auto => auto.puertas === 2 && auto.year <= 2017); //Igual que el de arriba
+console.log(resultado);
+
+//----------------------------------------------------------------------------------------
 // find
 
+//----------------------------------------------------------------------------------------
 // reduce
 
+//----------------------------------------------------------------------------------------
 // some
 
 
