@@ -123,12 +123,28 @@ const autos = [
 	},
 	{ marca: 'Audi', modelo: 'A4', year: 2016, precio: 30000, puertas: 4, color: 'Azul', transmision: 'automatico' }
 ];
-console.table(autos);
+//console.table(autos);
 
 // forEach
+// autos.forEach(auto => {
+// 	console.log(auto);
+// });
 
-// map
+// Muy similar al foreach	
+// MAP (map)
+// El map comparado con el forEach de arriba da el mismo resultado
+// la Diferencia está en que map retorna un arreglo nuevo
+let resultado = autos.forEach(auto => {
+	return auto;
+}); //Esto retornará undefined, ya que forEach no devuelve valor, solo accede
 
+let resultado = autos.map(auto => {
+	return auto;
+}); // Esto si es correcto ya que map si retorna valor
+
+let resultado = autos.map( auto => auto );  // Igual que el de arriba pero mas simple
+
+// Recomendado para extraer valores
 // filter
 
 // find
