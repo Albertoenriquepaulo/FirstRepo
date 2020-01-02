@@ -1,8 +1,8 @@
 // Builder, se trata de crear un abstraccion, es decir se crea una capa 
-// extra (aparte de la funcionaldiad), es decir, no se programa directamente
+// extra (aparte de la funcionalidad), es decir, no se programa directamente
 // sobre el código, se crea como una capa extra y sobre esta se programa. 
 // Esta abstraccion nos permitirá crear distintos tipos de objetos,
-// en este patrone s necesario agregar el tipo y el contenido del objeto
+// en este patrone es necesario agregar el tipo y el contenido del objeto
 // que deseamos crear
 //
 // Un buen ejemplo para esto seria un formulario

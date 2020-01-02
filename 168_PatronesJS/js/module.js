@@ -3,14 +3,14 @@
 
 const comprarBoleto = (function() {
     // Privado, lo que está fuera del return es privado, no puede ser accedido fuera del programa
-    let evento = 'Coneferencia JS 2019';
+    let evento = 'Conferencia JS 2019';
     const adquirirBoleto = () =>{
         const elemento = document.createElement('p');
         elemento.textContent = `Comprando Boleto para: ${evento}`;
         document.querySelector('#app').appendChild(elemento);
     }
 
-    // Publico
+    // Publico, lo que esté dentro del return se puede tener acceso publico, fuera de el es privado
     return {
         mostrarBoleto: function () {
             adquirirBoleto();
@@ -21,6 +21,13 @@ const comprarBoleto = (function() {
         }
     }
 })();
+
+//Ejemplo de funcion  iife
+(function(a, b) {
+    console.log(a+b);
+})(18, 2);
+
+
 
 comprarBoleto.mostrarBoleto();
 comprarBoleto.mostrarBoleto1();
