@@ -209,7 +209,7 @@ function filtrarAuto() {
         noResultados();
     }                        
     
-    console.log(autosCopy);
+    //console.log(autosCopy);
 }
 
 function filtrarMarca(element) {
@@ -221,8 +221,6 @@ function filtrarMarca(element) {
 }
 
 function filtrarYear(element) {
-    console.log(element);
-    console.log(+datosBusqueda.year);
     if (datosBusqueda.year) {
         return element.year === +datosBusqueda.year;
     } else {
@@ -231,8 +229,6 @@ function filtrarYear(element) {
 }
 
 function filtrarPuertas(element) {
-    // console.log('AQUI', element);
-    // console.log('AQUI1', +datosBusqueda.puertas);
     if (datosBusqueda.puertas) {
         return element.puertas === +datosBusqueda.puertas;
     } else {
