@@ -185,8 +185,17 @@ function mostrarAutos(autos) {
     });
 }
 
+function noResultados() {
+    const contenedor = document.querySelector('#resultado');
+    contenedor.innerHTML = '';
+    const noResultado = document.createElement('div');
+    noResultado.classList.add('alerta', 'error');
+    noResultado.appendChild(document.createTextNode('No hay resultado'));
+    contenedor.appendChild(noResultado);
+}
+
 function filtrarAuto() {
-    const autosCopy = obtenerAutos().filter(filtrarMarca)
+    const resultado = obtenerAutos().filter(filtrarMarca)
                         .filter(filtrarYear)
                         .filter(filtrarMin)
                         .filter(filtrarMax)
@@ -194,7 +203,12 @@ function filtrarAuto() {
                         .filter(filtrarTrans)
                         .filter(filtrarColor);
 
-    mostrarAutos(autosCopy)
+    if (resultado.length) {
+        mostrarAutos(resultado)    
+    } else {
+        noResultados();
+    }                        
+    
     console.log(autosCopy);
 }
 
@@ -257,3 +271,5 @@ function filtrarMax(element) {
         return element;
     }
 }
+
+
