@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Asignar a la base de datos
         DB = crearDB.result;
         // console.log(DB);
+        mostrarCitas();
     }
 
     // Este metodo solo corre una vez, es ideal para crear el Schema
@@ -85,6 +86,40 @@ document.addEventListener('DOMContentLoaded', () => {
         transaction.onerror = () => {
             console.log('Hubo un error');
         }
+    }
 
+    function mostrarCitas() {
+        // limpiar citas anteriores
+        while (citas.firstChild) {
+            citas.removeChild(citas.firstChild);
+        }
+
+        //Como vamos a seleccionar elementos necesitamos un objectStore
+        let objectStore = DB.transaction('citas').objectStore('citas');
+        //esto retorna una peticion que debemos usar opencursor
+        objectStore.openCursor().onsuccess = function (e) {
+            // cursor se ubicará en el registro indicado para acceder a los datos
+            let cursor = e.target.result;
+            // console.log(cursor);
+
+            // Comporbamos que exista un cursor
+            if (cursor) {
+                let citaHTML = document.createElement('li');
+                citaHTML.setAttribute('data-cita-id', cursor.value.key);
+                citaHTML.classList.add('list-group-item');
+                citaHTML.innerHTML = `
+                <p class="font-weight-bold">Mascota: <span class="font-weight-normal">${cursor.value.mascota}</span></p>
+                `;
+                citas.appendChild(citaHTML);
+                
+                //IMPORTANTE por si el cursor tiene mas de un registro y continue iterando
+                cursor.continue();
+
+            }
+
+
+
+
+        }
     }
 });
