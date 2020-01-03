@@ -139,14 +139,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     headingAdministra.textContent = 'Administra tus citas'
                 }
-                
-                
-
             }
         }
     }
 
     function borrarCita(e) {
-        let citaID = e.target.parentElement.getAttribute('data-cita-id');
+        let citaID = Number (e.target.parentElement.getAttribute('data-cita-id'));
+        // en indexedDB se utilizan las transacciones
+        let transaction = DB.transaction(['citas'], 'readwrite');
+        let objectStore = transaction.objectStore('citas');
+        let peticion = objectStore.delete(citaID);
+
+        transaction.oncomplete = () => {
+            e.target.parentElement.parentElement.removeChild( e.target.parentElement);
+            console.log(`Se eliminó la cita con el id ${citaID}`);
+            
+            if (!citas.firstChild) {
+                // Cuando no hay registros
+                headingAdministra.textContent = 'Agrega citas para comenzar'
+                let listado = document.createElement('p');
+                listado.classList.add('text-center');
+                listado.textContent = 'No hay registros';
+                citas.appendChild(listado);
+            } else {
+                headingAdministra.textContent = 'Administra tus citas'
+            }
+        }
+        
     }
 });
