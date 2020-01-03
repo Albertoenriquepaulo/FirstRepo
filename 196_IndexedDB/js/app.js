@@ -116,6 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p class="font-weight-bold">Hora: <span class="font-weight-normal">${cursor.value.hora}</span></p>
                 <p class="font-weight-bold">Sintomas: <span class="font-weight-normal">${cursor.value.sintomas}</span></p>
                 `;
+
+                // Boton de borrar
+                const botonBorrar = document.createElement('button');
+                botonBorrar.classList.add('borrar', 'boton', 'btn-danger');
+                botonBorrar.innerHTML = '<span aria-hidden="true">x</span> Borrar';
+                botonBorrar.onclick = borrarCita;
+                citaHTML.appendChild(botonBorrar);
                 citas.appendChild(citaHTML);
                 
                 //IMPORTANTE por si el cursor tiene mas de un registro y continue iterando
@@ -136,10 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 
 
             }
-
-
-
-
         }
+    }
+
+    function borrarCita(e) {
+        let citaID = e.target.parentElement.getAttribute('data-cita-id');
     }
 });
