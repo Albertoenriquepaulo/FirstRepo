@@ -121,6 +121,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 //IMPORTANTE por si el cursor tiene mas de un registro y continue iterando
                 cursor.continue();
 
+            } else {
+                if (!citas.firstChild) {
+                    // Cuando no hay registros
+                    headingAdministra.textContent = 'Agrega citas para comenzar'
+                    let listado = document.createElement('p');
+                    listado.classList.add('text-center');
+                    listado.textContent = 'No hay registros';
+                    citas.appendChild(listado);
+                } else {
+                    headingAdministra.textContent = 'Administra tus citas'
+                }
+                
+                
+
             }
 
 
