@@ -46,7 +46,7 @@ const usuario2 = {
         presentacion() {
             console.log(`Mi nombres es ${this.nombre} y tengo ${this.edad}`);
         }
-    } 
+    }
 }
 
 usuario2.presentacion();
