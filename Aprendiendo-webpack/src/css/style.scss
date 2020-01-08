@@ -1,0 +1,20 @@
+/*
+Este archivo se renombró, su ext era css y se cambió a scss, para ilustrar bien el video 233
+Scss, sass, son formas de programar SASS
+Lo primero que hicimos es instalar el loader
+         npm install --save-dev sass-loader
+Despues modificamos el webconfig -> webpack.config.js
+instalamos  tambien
+        npm install -g node-sass, de manera global 
+        npm install --save-dev node-sass, y también solo al proyecto
+*/
+$primario: red;
+$secundario: white;
+
+body {
+  background-color: $primario;
+}
+
+h1 {
+  color: $secundario;
+}
