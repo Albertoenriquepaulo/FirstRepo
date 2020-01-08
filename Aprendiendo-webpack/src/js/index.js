@@ -15,3 +15,10 @@ class Cliente {
 
 const cliente = new Cliente('Alberto');
 console.log(cliente);
+
+console.log('From index.JS');
+
+
+
+// Es costumbre llamar a este archivo Entry Point, ya que esta declarado en el webpack config
+// en module-exports -> entry
