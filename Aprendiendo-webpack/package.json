@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "ejecutar": "webpack --mode development",
-    "watch": "webpack --w --mode development"
+    "watch": "webpack --w --mode development",
+    "dev": "webpack-dev-server --mode development --open"
   },
   "author": "Alberto Paulo",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "sass-loader": "^8.0.0",
     "style-loader": "^1.1.2",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   }
 }
