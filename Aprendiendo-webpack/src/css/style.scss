@@ -8,13 +8,21 @@ instalamos  tambien
         npm install -g node-sass, de manera global 
         npm install --save-dev node-sass, y también solo al proyecto
 */
-$primario: red;
+$primario: cornflowerblue;
 $secundario: white;
 
-body {
-  background-color: $primario;
-}
+#clientes {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 1rem;
+    font-size: 1.4rem;
+    background-color: $primario;
+    color: $secundario;
 
-h1 {
-  color: $secundario;
+    &:nth-child(2n + 1) {
+      background-color: $secundario;
+      color: $primario;
+    }
+  }
 }
